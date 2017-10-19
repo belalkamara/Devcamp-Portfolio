@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/belalkamara/kamara
+  revision: 86932ff1665a8f90465080cc03202c7efdefd74e
+  specs:
+    kamara (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -191,6 +197,7 @@ DEPENDENCIES
   devise (~> 4.3)
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.5)
+  kamara!
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18)
   pry-byebug
