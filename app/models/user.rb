@@ -13,7 +13,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates_presence_of :full_name      
+  validates_presence_of :full_name  
+
+  has_many :comments, dependent: :destroy    
   
   def first_name
     self.full_name.split.first
