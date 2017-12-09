@@ -1,25 +1,187 @@
-<h1>About Me</h1>
+<div class="app-card-container">
+  <div class="card">
+    <h1>About Me</h1>
 
-<hr>
+    <hr>
 
-<div class="row">
-  <div class="col-md-4">
-    <%= image_tag "GRAD_DAY.jpg", width: 300, alt:"profile image" %>
-  </div>
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag "MyPhoto.jpeg", width: 300, alt:"profile image", class: 'profile-img' %>
 
-  <div class="col-md-8">
-    <p>
-    I graduated the University of Memphis with a Bachelors degree in Management Information Systems, in May of 2015. While obtaining that degree I developed skills in project management, analytical tools, SQL, and many other diverse abilities. While I was in college I started a small business where I used what I learned to develop a forecast methodology that based my previous inventory data and showed when was the best time to order product to minimize over/under spending during certain seasons.
-    </p>
+        <div class="skills">
+          <% @skills.each do |skill| %>
 
-<!-- ALL THIS INFO MAYBE OVERKILL... TRY AND SHORTEN IT
-    <p>
-    I started my career as an IT intern with Regional One Health, which is a major trauma hospital in the Memphis area. As an IT intern I floated around to various teams within the IT department, I worked mostly under the security team and the desktop team. I then was hired full time as a Desktop Support Tech where I troubleshot majority of the hospitals applications, helped implement the McAfee antivirus software throughout our environment, was the system administrator for the Vocera system, and many other various tasks and duties. During my time as a Desktop tech I gained a solid foundation of time management, troubleshooting, and implementation in a 24 hour fast pace environment.
-    </p>
--->
-    <p>
-    I currently work as a Business Application Analyst at Regional One Health, where I am directly over our Supply Chain and Financial application, which is McKesson. I’m responsible for all the upgrades, hotfixes, user service orders, and projects that affect either of the applications.  I also use SQL to run various reports to find outliers that affects the company financially.   
-    </p>
+              <div class="skill">
+                <h4><%= skill.title %></h4>
+                <div class="progress">
+                <div 
+                  class="progress-bar progress-bar-striped bg-warning"
+                  role="progressbar"
+                  aria-valuenow="<%= skill.percent_utilized %>"
+                  aria-valuemax="100"
+                  style="width: <%= skill.percent_utilized %>%" 
+                ></div>
+                </div>
+              </div>
+            
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <p>
+        I graduated the University of Memphis with a Bachelors degree in Management Information Systems, in May of 2015. While obtaining that degree I developed skills in project management, analytical tools, SQL, and many other diverse abilities. While I was in college I started a small business where I used what I learned to develop a forecast methodology that based my previous inventory data and showed when was the best time to order product to minimize over/under spending during certain seasons.
+        </p>
+        <p>
+        I currently work as a Business Application Analyst at Regional One Health, where I am directly over our Supply Chain and Financial application, which is McKesson. I’m responsible for all the upgrades, hotfixes, user service orders, and projects that affect either of the applications.  I also use SQL to run various reports to find outliers that affects the company financially.   
+        </p>
+
+        <p>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#jobHistory"
+            aria-expanded="false"
+            aria-controller="jobHistory"
+          >
+            Job History
+          </button>
+
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#education"
+            aria-expanded="false"
+            aria-controller="education"
+          >
+            Education
+          </button>
+        </p>
+
+        <p>
+          <div class="collapse" id="jobHistory">
+            <div class="card card-block">
+              <p><h5>Regional One Health</h5> (Oct 2016 - Current)</p>
+              <p>Title: Application Analyst</p>
+                <ul>
+                  <li>
+                    Responsible for functional support of McKesson applications such as Fiscal Management and Supply Chain.
+                  </li>
+                  <li>
+                    Analyze current systems’ resources in support of the initiatives of the application team.
+                  </li>
+                  <li>
+                    Front line support to ensure that the system is properly maintained and all business operation needs are met.
+                  </li>
+                  <li>
+                    Support the functional and technical operation of McKesson applications.
+                  </li>
+                  <li>
+                    Manage implementation of new systems and interfaces, and test the changes thoroughly.
+                  </li>
+                  <li>
+                    Provide 24x7 support on a rotated schedule
+                  </li>
+                </ul>
+            </div>
+
+            <div class="card card-block">
+              <p><h5>Regional One Health</h5> (Sep 2015 - Oct 2016)</p>
+              <p>Title: Desktop Support Tech</p>
+                <ul>
+                  <li>
+                    Maintain, analyze, and troubleshoot, software and computer peripherals
+                  </li>
+                  <li>
+                    Software configuration and integration
+                  </li>
+                  <li>
+                    Network troubleshooting and VLAN converting
+                  </li>
+                  <li>
+                    Building devices within the server and deploying them to computers
+                  </li>
+                  <li>
+                    Provided end user support to all Hospital applications
+                  </li>
+                  <li>
+                    Provide 24x7 support on a rotated schedule
+                  </li>
+                </ul>
+            </div>
+
+            <div class="card card-block">
+              <p><h5>Regional One Health</h5> (Apr 2015 - Jul 2015)</p>
+              <p>Title: Intern</p>
+                <ul>
+                  <li>
+                    Assist with hardware and software issues
+                  </li>
+                  <li>
+                    Establish connection of external devices to the network
+                  </li>
+                </ul>
+            </div>
+
+            <div class="card card-block">
+              <p><h5>Uptown Smoke Shop</h5> (May 2013 - Jul 2014)</p>
+              <p>Title: Owner</p>
+                <ul>
+                  <li>
+                    Developed social media marketing campaigns
+                  </li>
+                  <li>
+                    Composed financial balance sheet
+                  </li>
+                  <li>
+                    Conducted inventory plan by building a forecasting method
+                  </li>
+                  <li>
+                    Managed wholesale accounts with various amount of vendors
+                  </li>
+                  <li>
+                    Ran day to day operations
+                  </li>
+                </ul>
+            </div>
+
+            <div class="card card-block">
+              <p><h5>Cricket Communications</h5> (Jul 2010 - Mar 2012)</p>
+              <p>Title: Store Manager</p>
+                <ul>
+                  <li>
+                    Opened and closed business, responsible for daily bank deposits, and selling products.
+                  </li>
+                  <li>
+                    Increased sales in a low-profit store to a profitable level.
+                  </li>
+                  <li>
+                    Repaired software and hardware issues of cell phones
+                  </li>
+                  <li>
+                    Customer service
+                  </li>
+                </ul>
+            </div>
+          </div>  
+
+          <div class="collapse" id="education">
+            <div class="card card-block">
+              <p><h5>University of Memphis</h5> Bachelor of Business Administration, Management Information Systems  Graduated: May 2015</p>
+            </div>
+
+            <div class="card card-block">
+              <p><h5>Southwest Tennessee Community College</h5> Associate of Science in Business Administration Graduated: May 2013</p>
+            </div>
+          </div>
+        </p>
+
+      </div>
+    </div>
   </div>
 </div>
+
+
 
