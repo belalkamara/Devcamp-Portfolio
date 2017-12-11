@@ -19,5 +19,8 @@ Bundler.require(*Rails.groups)
 module DevcampPortfolio
   class Application < Rails::Application
     config.eager_load_paths << "#{Rails.root}/lib"
+    config.secret_key_base = ENV["SECRET_KEY_BASE"]
   end
 end
+
+#heroku config:set SECRET_KEY_BASE=Y3HN4RevdFxqfQAZlVVgRjsvtA9llmMkoCQoGyDbelal
